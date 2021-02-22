@@ -1,0 +1,35 @@
+.flights-navigation {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+
+  & a {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    background-color: #4fc4e7;
+    line-height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    border-radius: 50px 50px 0 0;
+    transition: border-radius .3s ease-in-out;
+
+    &.selected {
+      background-color: #fff;
+      color: #1eb7ee;
+    }
+
+    &:hover {
+      border-radius: 35px 35px 0 0;
+    }
+  }
+
+  & i {
+    margin: 0 20px;
+  }
+}
