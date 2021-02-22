@@ -18,11 +18,11 @@ const Flight = ({ flight }) => {
       ? 'Registration'
       : 'In flight';
 
-  const termClass = classNames('flights-list__item_terminal', { blue: terminal === 'D' });
+  const terminalClass = classNames('flights-list__item_terminal', { blue: terminal === 'D' });
 
   return (
     <tr className="flights-list__item">
-      <td className={termClass}>
+      <td className={terminalClass}>
         <span>{terminal}</span>
       </td>
       <td>{moment(localTime).format('HH:mm')}</td>
