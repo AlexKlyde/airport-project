@@ -10,7 +10,7 @@ const FlightsListBody = ({ searchedFlight }) => {
     ? flightsList.filter(flight => {
         const flightNumber = flight.flightN.toLowerCase();
         const destination = flight.destination.toLowerCase();
-        return [flightNumber, destination].includes(selectedFlight.toLowerCase());
+        return [flightNumber, destination].includes(searchedFlight.toLowerCase());
       })
     : flightsList;
 
