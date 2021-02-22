@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import { format} from 'date-fns';
 import moment from 'moment';
 
 const Flight = ({ flight }) => {
@@ -26,7 +25,7 @@ const Flight = ({ flight }) => {
       <td className={termClass}>
         <span>{terminal}</span>
       </td>
-      <td>{format(new Date(localTime), 'HH:mm')}</td>
+      <td>{moment(localTime).format('HH:mm')}</td>
       <td>{destination}</td>
       <td>{flightStatus}</td>
       <td className="flights-list__item_airline">
