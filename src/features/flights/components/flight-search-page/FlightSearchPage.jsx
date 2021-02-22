@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import qs from 'qs';
 
 import './flightSearchPage.scss';
 import '../flights-list/flightsList.scss';
 import { getFlightsList } from '../../flights.actions';
-import { filteredFlightsListSelector } from '../../flights.selectors';
 import SearchForm from '../search-form/SearchForm';
 import FlightsNavigation from '../flights-navigation/FlightsNavigation';
 import FlightsListHeader from '../flights-list/FlightsListHeader';
@@ -16,19 +15,8 @@ const FlightSearchPage = () => {
   const { pathname, search } = useLocation();
   const direction = pathname.slice(1);
   const dispatch = useDispatch();
-  const flightsList = useSelector(state => filteredFlightsListSelector(state));
   
-  const selectedFlight = qs.parse(search, { ignoreQueryPrefix: true }).search;
-
-  const flights = selectedFlight
-    ? flightsList.filter(flight => {
-      const flightNumber = flight.flightN.toLowerCase();
-      const destination = flight.destination.toLowerCase();
-        return [flightNumber, destination].includes(
-          selectedFlight.toLowerCase(),
-        );
-      })
-    : flightsList;
+  const searchedFlight = qs.parse(search, { ignoreQueryPrefix: true }).search;
 
   useEffect(() => {
     if (direction) {
@@ -48,11 +36,13 @@ const FlightSearchPage = () => {
           <FlightsListHeader />
           <Switch>
             <Route path="/:direction">
-              <FlightsListBody flights={flights} />
+              <FlightsListBody searchedFlight={searchedFlight} />
             </Route>
             <Route exact path="/">
               <tr>
-                <td className="no-flights" colSpan="6">Choose flight</td>
+                <td className="no-flights" colSpan="6">
+                  Choose flight
+                </td>
               </tr>
             </Route>
           </Switch>
