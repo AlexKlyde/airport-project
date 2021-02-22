@@ -29,7 +29,7 @@ const Flight = ({ flight }) => {
       <td>{destination}</td>
       <td>{flightStatus}</td>
       <td className="flights-list__item_airline">
-        <img src={airline.logo} alt="Lable" />
+        <img src={airline.logo} alt="logo" />
         <span>{airline.name}</span>
       </td>
       <td>{flightN}</td>

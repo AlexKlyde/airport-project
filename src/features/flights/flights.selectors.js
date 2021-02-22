@@ -2,6 +2,7 @@ import { createSelector } from 'reselect';
 import { format } from 'date-fns';
 import { todayDate } from './flights.utils';
 
+export const isFetchingSelector = state => state.flights.isFetching;
 export const flightsListSelector = state => state.flights.flightsList;
 
 export const filteredFlightsListSelector = createSelector([flightsListSelector], flightsList => {

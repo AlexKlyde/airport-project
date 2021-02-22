@@ -10,12 +10,13 @@ import SearchForm from '../search-form/SearchForm';
 import FlightsNavigation from '../flights-navigation/FlightsNavigation';
 import FlightsListHeader from '../flights-list/FlightsListHeader';
 import FlightsListBody from '../flights-list/FlightsListBody';
+import ChooseFlight from '../flights-list/ChooseFlight';
 
 const FlightSearchPage = () => {
   const { pathname, search } = useLocation();
   const direction = pathname.slice(1);
   const dispatch = useDispatch();
-  
+
   const searchedFlight = qs.parse(search, { ignoreQueryPrefix: true }).search;
 
   useEffect(() => {
@@ -39,11 +40,7 @@ const FlightSearchPage = () => {
               <FlightsListBody searchedFlight={searchedFlight} />
             </Route>
             <Route exact path="/">
-              <tr>
-                <td className="no-flights" colSpan="6">
-                  Choose flight
-                </td>
-              </tr>
+              <ChooseFlight />
             </Route>
           </Switch>
         </table>
