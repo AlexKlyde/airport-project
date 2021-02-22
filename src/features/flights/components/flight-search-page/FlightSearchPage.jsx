@@ -5,12 +5,12 @@ import qs from 'qs';
 
 import './flightSearchPage.scss';
 import '../flights-list/flightsList.scss';
-import FlightsList from '../flights-list/FlightsList';
 import { getFlightsList } from '../../flights.actions';
 import { filteredFlightsListSelector } from '../../flights.selectors';
 import SearchForm from '../search-form/SearchForm';
 import FlightsNavigation from '../flights-navigation/FlightsNavigation';
 import FlightsListHeader from '../flights-list/FlightsListHeader';
+import FlightsListBody from '../flights-list/FlightsListBody';
 
 const FlightSearchPage = () => {
   const { pathname, search } = useLocation();
@@ -48,7 +48,7 @@ const FlightSearchPage = () => {
           <FlightsListHeader />
           <Switch>
             <Route path="/:direction">
-              <FlightsList flights={flights} />
+              <FlightsListBody flights={flights} />
             </Route>
             <Route exact path="/">
               <tr>

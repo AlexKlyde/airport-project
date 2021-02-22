@@ -2,7 +2,7 @@ import React from 'react';
 
 import Flight from './Flight';
 
-const FlightsList = ({ flights }) => {
+const FlightsListBody = ({ flights }) => {
   if (!flights) {
     return null;
   }
@@ -22,4 +22,4 @@ const FlightsList = ({ flights }) => {
   );
 };
 
-export default FlightsList;
+export default FlightsListBody;
