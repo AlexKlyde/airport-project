@@ -51,7 +51,9 @@ const FlightSearchPage = () => {
               <FlightsList flights={flights} />
             </Route>
             <Route exact path="/">
-              {null}
+              <tr>
+                <td className="no-flights" colSpan="6">Choose flight</td>
+              </tr>
             </Route>
           </Switch>
         </table>

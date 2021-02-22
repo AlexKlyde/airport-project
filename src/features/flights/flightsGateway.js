@@ -1,7 +1,7 @@
-import { getDirectionFlights, today } from './flights.utils';
+import { getDirectionFlights, todayDate } from './flights.utils';
 
 export const fetchFlightsList = direction =>
-  fetch(`https://api.iev.aero/api/flights/${today}`)
+  fetch(`https://api.iev.aero/api/flights/${todayDate}`)
     .then(res => {
       if (res.ok) {
         return res.json();
