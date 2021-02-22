@@ -3,9 +3,9 @@ import React from 'react';
 import Flight from './Flight';
 
 const FlightsList = ({ flights }) => {
-  // if (!flights) {
-  //   return null;
-  // }
+  if (!flights) {
+    return null;
+  }
 
   return (
     <tbody>
