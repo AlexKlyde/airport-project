@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Flight from './Flight';
-import { filteredFlightsListSelector, isFetchingSelector } from '../../flights.selectors';
-import Spinner from '../spinner/Spinner';
+import { filteredFlightsListSelector, isFetchingSelector } from '../../../flights.selectors';
+import Spinner from '../../spinner/Spinner';
 
 const FlightsListBody = ({ searchedFlight }) => {
   const flightsList = useSelector(state => filteredFlightsListSelector(state));
