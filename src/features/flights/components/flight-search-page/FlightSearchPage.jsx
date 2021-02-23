@@ -10,7 +10,7 @@ import SearchForm from '../search-form/SearchForm';
 import FlightsNavigation from '../flights-navigation/FlightsNavigation';
 import FlightsListHeader from '../flights-list/FlightsListHeader';
 import FlightsListBody from '../flights-list/FlightsListBody';
-import ChooseFlight from '../flights-list/ChooseFlight';
+import ChooseFlightText from '../flights-list/ChooseFlightText';
 
 const FlightSearchPage = () => {
   const { pathname, search } = useLocation();
@@ -40,7 +40,7 @@ const FlightSearchPage = () => {
               <FlightsListBody searchedFlight={searchedFlight} />
             </Route>
             <Route exact path="/">
-              <ChooseFlight />
+              <ChooseFlightText />
             </Route>
           </Switch>
         </table>

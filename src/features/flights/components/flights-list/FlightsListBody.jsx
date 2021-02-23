@@ -17,10 +17,9 @@ const FlightsListBody = ({ searchedFlight }) => {
       })
     : flightsList;
 
-  const flightsRows =
-    flights.length > 0 ? (
-      flights.map(flight => <Flight key={flight.id} flight={flight} />)
-    ) : (
+  const flightsRows = flights.length > 0
+    ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
+    : (
       <tr>
         <td className="no-flights" colSpan="6">
           No Flights

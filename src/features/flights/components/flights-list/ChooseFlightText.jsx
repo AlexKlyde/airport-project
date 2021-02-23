@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChooseFlight = () => {
+const ChooseFlightText = () => {
   return (
     <tbody>
       <tr>
@@ -12,4 +12,4 @@ const ChooseFlight = () => {
   );
 };
 
-export default ChooseFlight;
+export default ChooseFlightText;
