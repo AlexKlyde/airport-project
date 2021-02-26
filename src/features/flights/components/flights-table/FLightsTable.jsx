@@ -6,7 +6,6 @@ import FlightsListHeader from './flights-list-header/FlightsListHeader';
 import FlightsListBody from './flights-list-body/FlightsListBody';
 import ChooseFlightText from './ChooseFlightText';
 
-
 const FlightsTable = ({ searchedFlight }) => {
   return (
     <table className="flights-list">

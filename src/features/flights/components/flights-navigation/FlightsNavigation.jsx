@@ -1,11 +1,9 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './flightsNavigation.scss';
 
-const FlightsNavigation = () => {
-  const { search } = useLocation();
-
+const FlightsNavigation = ({ search }) => {
   return (
     <nav className="flights-navigation">
       <NavLink to={`/departure${search}`} activeClassName="selected">

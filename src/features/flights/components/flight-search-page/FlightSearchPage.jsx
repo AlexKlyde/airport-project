@@ -29,7 +29,7 @@ const FlightSearchPage = () => {
         <SearchForm direction={direction} />
       </header>
       <main className="search-flights__content">
-        <FlightsNavigation />
+        <FlightsNavigation search={search}/>
         <FlightsTable searchedFlight={searchedFlight} />
       </main>
     </>
