@@ -6,6 +6,7 @@ const SearchForm = ({ direction }) => {
   const [searchText, setSearchText] = useState('');
 
   const url = !direction ? 'departure' : direction;
+  const search = searchText ? `?search=${searchText}` : '';
 
   return (
     <form className="search-form">
@@ -17,7 +18,7 @@ const SearchForm = ({ direction }) => {
         onChange={e => setSearchText(e.target.value)}
         placeholder="Destination or flight #"
       />
-      <Link to={`${url}?search=${searchText}`}>
+      <Link to={`${url}${search}`}>
         <button type="submit" className="btn search-form__btn">
           Search
         </button>
