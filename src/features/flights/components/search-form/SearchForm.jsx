@@ -5,7 +5,7 @@ import './searchForm.scss';
 const SearchForm = ({ direction }) => {
   const [searchText, setSearchText] = useState('');
 
-  const url = !direction ? 'departure' : direction
+  const url = !direction ? 'departure' : direction;
 
   return (
     <form className="search-form">
@@ -19,7 +19,7 @@ const SearchForm = ({ direction }) => {
       />
       <Link to={`${url}?search=${searchText}`}>
         <button type="submit" className="btn search-form__btn">
-        Search
+          Search
         </button>
       </Link>
     </form>
