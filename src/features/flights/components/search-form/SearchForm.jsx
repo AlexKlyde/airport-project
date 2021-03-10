@@ -5,6 +5,8 @@ import './searchForm.scss';
 const SearchForm = ({ direction }) => {
   const [searchText, setSearchText] = useState('');
 
+  const url = !direction ? 'departure' : direction
+
   return (
     <form className="search-form">
       <i className="search-form__icon fas fa-search fa-2x"></i>
@@ -15,7 +17,7 @@ const SearchForm = ({ direction }) => {
         onChange={e => setSearchText(e.target.value)}
         placeholder="Destination or flight #"
       />
-      <Link to={`${!direction ? 'departure' : direction}?search=${searchText}`}>
+      <Link to={`${url}?search=${searchText}`}>
         <button type="submit" className="btn search-form__btn">
         Search
         </button>
