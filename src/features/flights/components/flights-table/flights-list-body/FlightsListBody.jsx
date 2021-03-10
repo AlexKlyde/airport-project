@@ -9,6 +9,10 @@ const FlightsListBody = ({ searchedFlight }) => {
   const flightsList = useSelector(state => filteredFlightsListSelector(state));
   const isFetching = useSelector(state => isFetchingSelector(state));
 
+  if (isFetching) {
+    return <Spinner />;
+  }
+
   const flights = searchedFlight
     ? flightsList.filter(flight => {
         const flightNumber = flight.flightN.toLowerCase();
@@ -17,17 +21,19 @@ const FlightsListBody = ({ searchedFlight }) => {
       })
     : flightsList;
 
-  const flightsRows = flights.length > 0
-    ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
-    : (
-      <tr>
-        <td className="no-flights" colSpan="6">
-          No Flights
-        </td>
-      </tr>
-    );
-
-  return <tbody>{isFetching ? <Spinner /> : flightsRows}</tbody>;
+  return (
+    <tbody>
+      {
+        flights.length > 0
+          ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
+          : <tr>
+              <td className="no-flights" colSpan="6">
+                No Flights
+              </td>
+            </tr>
+      }
+    </tbody>
+  );
 };
 
 export default FlightsListBody;
