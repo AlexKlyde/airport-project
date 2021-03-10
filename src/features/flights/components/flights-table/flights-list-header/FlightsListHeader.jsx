@@ -9,7 +9,7 @@ const FlightsListHeader = () => {
           <th>Destination</th>
           <th>Status</th>
           <th>Airline</th>
-          <th>Flights</th>
+          <th>Flight #</th>
         </tr>
       </thead>
   );
