@@ -21,19 +21,13 @@ const FlightsListBody = ({ searchedFlight }) => {
       })
     : flightsList;
 
-  return (
-    <tbody>
-      {
-        flights.length > 0
-          ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
-          : <tr>
-              <td className="no-flights" colSpan="6">
-                No Flights
-              </td>
-            </tr>
-      }
-    </tbody>
-  );
+  return flights.length > 0
+      ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
+      : <tr>
+          <td className="no-flights" colSpan="6">
+            No Flights
+          </td>
+        </tr>
 };
 
 export default FlightsListBody;

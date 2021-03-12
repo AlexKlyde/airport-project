@@ -10,14 +10,16 @@ const FlightsTable = ({ searchedFlight }) => {
   return (
     <table className="flights-list">
       <FlightsListHeader />
-      <Switch>
-        <Route path="/:direction">
-          <FlightsListBody searchedFlight={searchedFlight} />
-        </Route>
-        <Route exact path="/">
-          <ChooseFlightText />
-        </Route>
-      </Switch>
+      <tbody>
+        <Switch>
+          <Route path="/:direction">
+            <FlightsListBody searchedFlight={searchedFlight} />
+          </Route>
+          <Route exact path="/">
+            <ChooseFlightText />
+          </Route>
+        </Switch>
+      </tbody>
     </table>
   );
 };
