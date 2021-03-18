@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from './store';
-import FlightSearchPage from './features/flights/components/flight-search-page/FlightSearchPage';
+import FlightSearchPage from './features/flights/components/search-page/FlightSearchPage';
 
 const App = () => {
   return (

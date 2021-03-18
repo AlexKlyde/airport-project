@@ -14,20 +14,20 @@ const FlightsListBody = ({ searchedFlight }) => {
   }
 
   const flights = searchedFlight
-    ? flightsList.filter(flight => {
-        const flightNumber = flight.flightN.toLowerCase();
-        const destination = flight.destination.toLowerCase();
-        return [flightNumber, destination].includes(searchedFlight.toLowerCase());
-      })
+    ? flightsList.filter(({ flightN, destination }) =>
+          flightN.toLowerCase().includes(searchedFlight.toLowerCase()) ||
+          destination.toLowerCase().includes(searchedFlight.toLowerCase()))
     : flightsList;
 
-  return flights.length > 0
-      ? flights.map(flight => <Flight key={flight.id} flight={flight} />)
-      : <tr>
-          <td className="no-flights" colSpan="6">
-            No Flights
-          </td>
-        </tr>
+  return flights.length > 0 ? (
+    flights.map(flight => <Flight key={flight.id} flight={flight} />)
+  ) : (
+    <tr>
+      <td className="no-flights" colSpan="6">
+        No Flights
+      </td>
+    </tr>
+  );
 };
 
 export default FlightsListBody;

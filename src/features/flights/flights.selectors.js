@@ -7,6 +7,6 @@ export const flightsListSelector = state => state.flights.flightsList;
 
 export const filteredFlightsListSelector = createSelector([flightsListSelector], flightsList => {
   return flightsList
-    .filter(flight => format(new Date(flight.localTime), 'dd-MM-yyyy') === todayDate)
+    .filter(({ localTime }) => format(new Date(localTime), 'dd-MM-yyyy') === todayDate)
     .sort((a, b) => new Date(a.localTime) - new Date(b.localTime));
 });

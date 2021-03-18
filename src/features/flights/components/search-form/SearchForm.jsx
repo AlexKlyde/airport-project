@@ -5,7 +5,7 @@ import './searchForm.scss';
 const SearchForm = ({ direction }) => {
   const [searchText, setSearchText] = useState('');
 
-  const url = !direction ? 'departure' : direction;
+  const url = direction || 'departure';
   const search = searchText ? `?search=${searchText}` : '';
 
   return (

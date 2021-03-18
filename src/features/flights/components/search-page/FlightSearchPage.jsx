@@ -6,8 +6,8 @@ import qs from 'qs';
 import './flightSearchPage.scss';
 import { getFlightsList } from '../../flights.actions';
 import SearchForm from '../search-form/SearchForm';
-import FlightsNavigation from '../flights-navigation/FlightsNavigation';
-import FlightsTable from '../flights-table/FLightsTable';
+import FlightsNavigation from '../navigation/FlightsNavigation';
+import FlightsTable from '../flights-list/FLightsTable';
 
 const FlightSearchPage = () => {
   const { pathname, search } = useLocation();
