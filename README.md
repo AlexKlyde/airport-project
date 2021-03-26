@@ -1,5 +1,5 @@
 You can see the project here
-# [Airpot Project](https://pedantic-mayer-e8318c.netlify.app)
+# [Airpot Project](https://compassionate-noether-ce7557.netlify.app/)
 ## Getting Started with Airport Project
 In the project directory, you can run:
 ### `npm start`
@@ -19,5 +19,5 @@ The tech stack is:
 * Redux
 * Webpack
 
-### Author: [Aleksei Kalaida](https://alekseikalaidacv.netlify.app/)
+### Author: [Aleksei Kalaida](https://www.linkedin.com/in/aleksei-kalaida-28444092/)
 
